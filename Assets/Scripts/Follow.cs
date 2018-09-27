@@ -1,0 +1,1 @@
+﻿using UnityEngine;  public class Follow : MonoBehaviour {      public Transform player;     public Vector3 offset;      // Update is called once per frame     void Update()     {         //this alone will give first person view         transform.position = player.position + offset;     }     } 
