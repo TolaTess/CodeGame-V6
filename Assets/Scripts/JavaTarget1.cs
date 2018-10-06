@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -14,46 +15,9 @@ public class JavaTarget1 : MonoBehaviour
     public GameObject pickupEffect;
     public static int score = DatabaseManager.score;
     public static int stringTotal = 9;
-    public static int integerTotal = 9;
-    public static int booleanTotal = 9;
-    public static int totalCounter = 0;
-    //public GameObject nextObject;
     private BoxCollider Target;
 
-    //float x;
-    //float y;
-    //float z;
-    //Vector3 pos;
-    void Start()
-    {
-        //var vcal = nextObject.GetComponent<Collider>();
 
-        //x = Random.Range(-7, 3);
-        //z = 0;
-       // y = Random.Range(3, 5);
-        //pos = new Vector3(x, y, z);
-    }
-
-    void Awake()
-    {
-        //Target = nextObject.GetComponent<BoxCollider>();
-    }
-
-    /// <summary>
-    /// call gameover if all objects killed
-    /// </summary>
-    private void Update()
-    {
-        if (totalCounter == 3)
-        {
-            FindObjectOfType<GameManager>().GameOver();
-            stringTotal = 9;
-            booleanTotal = 9;
-            integerTotal = 9;
-
-        }
-
-    }
     /// <summary>
     /// if health reduces to 0, Die method called to kill object
     /// socre is increased by 20
@@ -91,20 +55,13 @@ public class JavaTarget1 : MonoBehaviour
         switch (gameObject.tag)
         {
             case "String":
+            case "Fragment":
+            case "Fragment2":
                 stringTotal--;
-                totalCounter++;
-                break;
-            case "Integer":
-                integerTotal--;
-                totalCounter++;
-                break;
-            case "Boolean":
-                booleanTotal--;
-                totalCounter++;
                 break;
 
         }
-        Debug.Log(totalCounter);
+        Debug.Log(stringTotal);
 
     }
 

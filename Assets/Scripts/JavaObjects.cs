@@ -7,15 +7,15 @@ public class JavaObjects : MonoBehaviour {
     /// <summary>
     /// Datatype objects destription for UI display
     /// </summary>
-    public static string M1 = "\nProblem 1: \nModify: public\nDataType: String\nName: deleteString\nParameters: 1";
-    public static string F1 = "\nProblem 1:\nModify: private\nDataType: String\nName: deleteStr";
-    public static string B1 = "\nProblem 1:\nint take = 7;\nif(deleteStr.length() < take)\n return deleteStr;\n String n = deleteStr.subString(2,7);\nif(n.equals(string)){return deleteStr.charAt(0) + deleteStr.subbstring(7);}\n return deleteStr;";
-    public static string M2 = "\nProblem 2:\nModify: public\nDataType: String\nName: reverse\nParameters: 1";
-    public static string F2 = "\nProblem 2:\nModify: private\nDataType: String\nName: reverseString";
-    public static string B2 = "\nProblem 2:\nfor(int i = reverseString.length()-1>=0; i--)\n reverseString= reverseString + reverseString.charAt(i);";
-    public static string M3 = "\nProblem 3:\nModify: public\nDataType: String\nName: notString\nParameters: 1";
-    public static string F3 = "\nProblem 3:\nModify: private\nDataType: String\nName: notString";
-    public static string B3 = "\nProblem 3:\nif(notString.length()>=3 && notString.substring(0,3).equals(java)){\n return notString;} return java + notString;";
+    public static string M1 = "\nJava is owned\nby Oracle";
+    public static string F1 = "\nSystem.out.println()";
+    public static string B1 = "\nSystem.out()";
+    public static string M2 = "\nJava is Robust";
+    public static string F2 = "\nJava has a huge\ndeveloper communicty ";
+    public static string B2 = "\n1 Version";
+    public static string M3 = "\n1 for each platform";
+    public static string F3 = "\nMain method";
+    public static string B3 = "\nFunction method";
 
     public static string IM1 = "\nModify: public\nDataType: Integer\nName: sumInteger\nParameters: 2";
     public static string IF1 = "\nModify: private\nDataType: int\nName: a";

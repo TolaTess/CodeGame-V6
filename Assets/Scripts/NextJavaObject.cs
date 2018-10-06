@@ -5,24 +5,37 @@ using UnityEngine;
 public class NextJavaObject : MonoBehaviour {
 
     public GameObject prevObject;
+    public GameObject nextT;
+    public GameObject nextQ;
+    public float wtime;
 
-    private BoxCollider Target;
-
-    private bool isDead = false;
+    private JavaTarget1 Target;
 
     void Awake()
     {
-        Target = gameObject.GetComponentInChildren<BoxCollider>();
+        Target = gameObject.GetComponentInChildren<JavaTarget1>();
     }
 
 
     void Update()
     {
-        if(prevObject == null)
+        if(gameObject != null)
         {
+            if (prevObject == null)
+            {
+                    Target.enabled = true;
+                    nextQ.SetActive(true);
+                    nextT.SetActive(true);
+                    StartCoroutine("WaitForSec");
+            }
            
-                Target.enabled = true;
-        }
-       
+        } 
+     
+    }
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(wtime);
+        Destroy(nextQ);
+        Destroy(nextT);
     }
 }

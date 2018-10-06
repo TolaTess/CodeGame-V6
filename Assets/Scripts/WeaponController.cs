@@ -55,7 +55,7 @@ public class WeaponController : MonoBehaviour
          RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
-            JavaTarget target = hit.transform.GetComponent<JavaTarget>();
+            JavaTarget1 target = hit.transform.GetComponent<JavaTarget1>();
 
             if (target!= null)
             {

@@ -38,79 +38,30 @@ public class StringSelectManager : MonoBehaviour {
                 switch (hitObject.name)
                 {
                     case "Method1":
-                        if (hitObject.CompareTag("Fragment"))
-                        {
-                            dtext.text = "Try again";
-                        }
-                        break;
-                    case "Method1(Clone)":
-                            dtext.text = JavaObjects.M1;
-
+                            dtext.text = JavaObjects.F3;
                         break;
                     case "Field1":
-                            dtext.text = JavaObjects.F1;
+                            dtext.text = JavaObjects.B2;
                         break;
                     case "Body1":
-                        if (hitObject.CompareTag("Fragment"))
-                        {
-                            dtext.text = "Look for\nDataType String";
-                        }
-                        break;
-                    case "Body1(Clone)":
-                            dtext.text = JavaObjects.B1;
+                            dtext.text = JavaObjects.F1;
                         break;
                     case "Method2":
-                        if (hitObject.CompareTag("Fragment2"))
-                        {
-                            dtext.text = "It not me";
-                        }
-                        break;
-                    case "Method2(Clone)":
                             dtext.text = JavaObjects.M2;
                         break;
                     case "Field2":
-                        if (hitObject.CompareTag("Fragment2"))
-                        {
-                            dtext.text = "Hint,\nI am Colour of String";
-                        }
-                        break;
-                    case "Field2(Clone)":
                             dtext.text = JavaObjects.F2;
                         break;
                     case "Body2":
-                        if (hitObject.CompareTag("Fragment2"))
-                        {
-                            dtext.text = "Try again";
-                        }
-                        break;
-                    case "Body2(Clone)":
-                            dtext.text = JavaObjects.B2;
+                            dtext.text = JavaObjects.B1;
                         break;
                     case "Method3":
-                        if (hitObject.CompareTag("Fragment3"))
-                        {
-                            dtext.text = "Try again,\nKeeping searching";
-                        }
-                        break;
-                    case "Method3(Clone)":
                             dtext.text = JavaObjects.M3;
                         break;
                     case "Field3":
-                        if (hitObject.CompareTag("Fragment3"))
-                        {
-                            dtext.text = "You are nearly there";
-                        }
-                        break;
-                    case "Field3(Clone)":
-                            dtext.text = JavaObjects.F3;
+                            dtext.text = JavaObjects.M1;
                         break;
                     case "Body3":
-                        if (hitObject.CompareTag("Fragment3"))
-                        {
-                            dtext.text = "Look for keyword\nModify";
-                        }
-                        break;
-                    case "Body3(Clone)":
                             dtext.text = JavaObjects.B3;
                         break;
                     default:

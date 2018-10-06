@@ -15,7 +15,7 @@ public class TotalScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        int newScore = JavaTarget.score;
+        int newScore = JavaTarget1.score;
 
  
         text.text = "Score: " + newScore;
