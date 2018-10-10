@@ -52,6 +52,7 @@ public class ChooseAnswer : MonoBehaviour {
                 if (incorrect2 == null)
                 {
                     DatabaseManager.score = score + 5;
+                    invalidMessage.SetActive(false);
                     followMe.enabled = true;
                     prevObject.SetActive(true);
                     gameObject.GetComponent<CharacterController>();
@@ -76,10 +77,11 @@ public class ChooseAnswer : MonoBehaviour {
             {
                 DatabaseManager.score = score - 10;
                 invalidMessage.SetActive(true);
-                Destroy(incorrect1);
+                Destroy(incorrect2);
                 if (incorrect1 == null)
                 {
                     DatabaseManager.score = score + 5;
+                    invalidMessage.SetActive(false);
                     followMe.enabled = true;
                     prevObject.SetActive(true);
                     gameObject.GetComponent<CharacterController>();
@@ -100,6 +102,7 @@ public class ChooseAnswer : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
+         
             DatabaseManager.score = score + 20;
             validMessage.SetActive(true);
             Destroy(incorrect1);
