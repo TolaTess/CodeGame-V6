@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class StringSelectManager : MonoBehaviour {
-
+    
 
     public GameObject selectedGameObject;
-    private GameObject hitObject;
+    public GameObject hitObject;
 
     public Text dtext;
 

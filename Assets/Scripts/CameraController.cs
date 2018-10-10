@@ -30,14 +30,20 @@ public class CameraController : MonoBehaviour {
         LookAtTarget();
 
         //left side
-        if(Input.GetKeyDown(KeyCode.G) && !smoothRotating){
+        if(!smoothRotating){
+            if (Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.K))
+            {
 
-            StartCoroutine("RotateAroundTarget", 45);
+                StartCoroutine("RotateAroundTarget", 45);
+            }
         }
         //right side
-        if (Input.GetKeyDown(KeyCode.H) && !smoothRotating)
+        if (!smoothRotating)
         {
-            StartCoroutine("RotateAroundTarget", -45);
+            if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.O))
+            {
+                StartCoroutine("RotateAroundTarget", -45);
+            }
         }
     }
 
@@ -54,7 +60,7 @@ public class CameraController : MonoBehaviour {
     /// <summary>
     /// use the look vector (target + current) to aim camera toward the player
     /// </summary>
-    void LookAtTarget()
+    public void LookAtTarget()
     {
         targetRotation = Quaternion.LookRotation(target.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);

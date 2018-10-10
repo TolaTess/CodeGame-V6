@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fragment3
+  - Fragment
+  - NotSelectable
+  - Fragment2
+  - AnimatedDialog
+  - Integer
+  - Boolean
+  - String
+  - Answer
+  - Audience
   layers:
   - Default
   - TransparentFX
