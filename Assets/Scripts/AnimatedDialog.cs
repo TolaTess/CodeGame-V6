@@ -19,7 +19,7 @@ public class AnimatedDialog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown (KeyCode.Space)){
+        if(Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown(KeyCode.N)){
             if(characterIndex < strings[stringIndex].Length){
                 characterIndex = strings[stringIndex].Length;
             } else if(stringIndex < strings.Length){

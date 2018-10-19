@@ -5,7 +5,7 @@ Welcome to Basic Concept, Here you will learn about Comments, Variables, Primiti
 Lets Start with Comments. Single-line comments starts with two-forward slashes. (//). Java also supports Multi-line comments using a forward slash and asterisk as in this example (/* comments */)... press Space
 Press 2 or 3 or 1 to swap your Fighter! Fight your way to the answers! Good luck... press ESC to Start
 Q1
-How do you create Single-line comments in Java?
+How do you create Single-line comments in Java? Type A, B or C to select your Fight!
 Ans
 ** at beginning
 // at end
