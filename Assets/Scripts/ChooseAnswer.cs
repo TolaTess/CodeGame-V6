@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ChooseAnswer : MonoBehaviour {
 
-    CharacterController characterController;
+    //CharacterController characterController;
+    AnswerFighter answerFighter;
+    Rigidbody rbody;
     public Transform[] targets;
     private Follow followMe;
     public static int score = DatabaseManager.score;
@@ -15,6 +17,8 @@ public class ChooseAnswer : MonoBehaviour {
     public GameObject prevObject;
     public GameObject incorrect1;
     public GameObject incorrect2;
+    public GameObject objectectA;
+    public GameObject objectectB;
     public GameObject invalidMessage;
     public GameObject validMessage;
 
@@ -35,7 +39,9 @@ public class ChooseAnswer : MonoBehaviour {
     void Start()
     {
         followMe = gameObject.GetComponent<Follow>();
-        characterController = gameObject.GetComponent<CharacterController>();
+       // characterController = gameObject.GetComponent<CharacterController>();
+        answerFighter = gameObject.GetComponent<AnswerFighter>();
+        rbody = gameObject.GetComponent<Rigidbody>();
     }
 
     IEnumerator StartFight()
@@ -53,10 +59,13 @@ public class ChooseAnswer : MonoBehaviour {
                 {
                     DatabaseManager.score = score + 5;
                     invalidMessage.SetActive(false);
-                    followMe.enabled = true;
+                    //followMe.enabled = true;
+                   // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                     prevObject.SetActive(true);
                     gameObject.GetComponent<CharacterController>();
-                    characterController.enabled = true;
+                    //characterController.enabled = true;
+                    answerFighter.enabled = true;
+                    rbody.isKinematic = true;
                 }
             }
             else
@@ -65,10 +74,13 @@ public class ChooseAnswer : MonoBehaviour {
                 validMessage.SetActive(true);
                 Destroy(incorrect1);
                 Destroy(incorrect2);
-                followMe.enabled = true;
+                //followMe.enabled = true;
+               // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                 prevObject.SetActive(true);
                 gameObject.GetComponent<CharacterController>();
-                characterController.enabled = true;
+                //characterController.enabled = true;
+                answerFighter.enabled = true;
+                rbody.isKinematic = true;
             }
         }
         if (Input.GetKeyDown(KeyCode.B))
@@ -82,10 +94,13 @@ public class ChooseAnswer : MonoBehaviour {
                 {
                     DatabaseManager.score = score + 5;
                     invalidMessage.SetActive(false);
-                    followMe.enabled = true;
+                    //followMe.enabled = true;
+                   // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                     prevObject.SetActive(true);
                     gameObject.GetComponent<CharacterController>();
-                    characterController.enabled = true;
+                    //characterController.enabled = true;
+                    answerFighter.enabled = true;
+                    rbody.isKinematic = true;
                 }
             }
             else
@@ -94,10 +109,13 @@ public class ChooseAnswer : MonoBehaviour {
                 validMessage.SetActive(true);
                 Destroy(incorrect1);
                 Destroy(incorrect2);
-                followMe.enabled = true;
+                //followMe.enabled = true;
+               // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                 prevObject.SetActive(true);
                 gameObject.GetComponent<CharacterController>();
-                characterController.enabled = true;
+                //characterController.enabled = true;
+                answerFighter.enabled = true;
+                rbody.isKinematic = true;
             }
         }
         if (Input.GetKeyDown(KeyCode.C))
@@ -107,13 +125,34 @@ public class ChooseAnswer : MonoBehaviour {
             validMessage.SetActive(true);
             Destroy(incorrect1);
             Destroy(incorrect2);
-            followMe.enabled = true;
+            //followMe.enabled = true;
+            //StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
             prevObject.SetActive(true);
             gameObject.GetComponent<CharacterController>();
-            characterController.enabled = true;
+            //characterController.enabled = true;
+            answerFighter.enabled = true;
+            rbody.isKinematic = true;
         }
 
         }
+
+    IEnumerator moveToX(Transform fromPosition, Vector3 toPosition, float duration)
+    {
+        yield return new WaitForSeconds(5f);
+        //Make sure there is only one instance of this function running
+
+        float counter = 0;
+
+        //Get the current position of the object to be moved
+        Vector3 startPos = fromPosition.position;
+
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            fromPosition.position = Vector3.Lerp(startPos, toPosition, counter / duration);
+            yield return null;
+        }
+    }
    
 
 }

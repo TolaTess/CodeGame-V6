@@ -1,23 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnswerFighter : MonoBehaviour {
 
-    private Animator animator;
-    private AnimatorStateInfo currentState;
-    private AnimatorStateInfo previousState;
+    public Transform player;
+    static Animator animator;
+    //private AnimatorStateInfo currentState;
+    //private AnimatorStateInfo previousState;
+
+    public Slider healthbar;
 
     // Use this for initialization
     void Start()
     {
 
         animator = GetComponent<Animator>();
-        currentState = animator.GetCurrentAnimatorStateInfo(0);
-        previousState = currentState;
-
-        //animator = GetComponent<Animator>();
-
+        //currentState = animator.GetCurrentAnimatorStateInfo(0);
+        //previousState = currentState;
     }
 
 
@@ -36,25 +37,52 @@ public class AnswerFighter : MonoBehaviour {
             animator.SetBool("Lkick", true);
         if (Input.GetButton("MForward"))
             animator.SetBool("MBack", true);
-        if (Input.GetButton("Winc"))
+        ;
+    }
+
+    void isDead()
+    {
+        if (Input.GetButton("Knockdown"))
             animator.SetBool("Knockdown", true);
         ;
     }
 
     void Update()
-
     {
-
-        IsFighting();
-        isDead();
-    }
-
-    void isDead()
-    {
-        if(Input.GetButton("Winc"))
+        if (healthbar.value <= 0) return;
+        Vector3 direction = player.position - this.transform.position;
+        float angle = Vector3.Angle(direction, this.transform.forward);
+        if(Vector3.Distance(player.position, this.transform.position) < 20 && angle < 30)
         {
-            Destroy(gameObject);
+            direction.y = 0;
+
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
+                                                       Quaternion.LookRotation(direction), 0.1f);
+
+            animator.SetBool("Idle", false);
+            if (direction.magnitude > 5)
+            {
+                this.transform.Translate(0, 0, 0.5f);
+                animator.SetBool("Walk", true);
+                animator.SetBool("Hook", false);
+
+            }
+            else
+                //IsFighting();
+            {
+                animator.SetBool("Hook", false);
+                animator.SetBool("Walk", false);
+            }
+               
         }
+        else
+        {
+            animator.SetBool("Idle", true);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Hook", false);
+        }
+
     }
+
 
 }
