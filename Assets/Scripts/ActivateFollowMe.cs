@@ -23,7 +23,7 @@ public class ActivateFollowMe : MonoBehaviour
         }
         turn = turn + 70 * Time.deltaTime;
         gameObject.transform.rotation = Quaternion.Euler(0, turn, 0);
-       // gameObject.transform.Translate(0, 0, speed * Time.deltaTime);
+        gameObject.transform.Translate(0, 0, speed * Time.deltaTime);
 
     }
 

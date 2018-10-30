@@ -15,6 +15,7 @@ TagManager:
   - Answer
   - Audience
   - NotAnswer
+  - 3rdperson
   layers:
   - Default
   - TransparentFX

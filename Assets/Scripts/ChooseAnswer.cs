@@ -6,7 +6,12 @@ public class ChooseAnswer : MonoBehaviour {
 
     //CharacterController characterController;
     AnswerFighter answerFighter;
-    Rigidbody rbody;
+    public GameObject fightcam;
+    public GameObject avatar;
+    public GameObject mcamera;
+    public GameObject controls;
+    public GameObject gcontrols;
+    //Chase chase;
     public Transform[] targets;
     private Follow followMe;
     public static int score = DatabaseManager.score;
@@ -25,14 +30,14 @@ public class ChooseAnswer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(transform.position != targets[current].position)
+        /*if(transform.position != targets[current].position)
         {
             Vector3 newPos = Vector3.MoveTowards(transform.position, targets[current].position, speed * Time.deltaTime);
             GetComponent<Rigidbody>().MovePosition(newPos);
         }
         else{
             current = (current + 1) % targets.Length;
-        }
+        }*/
         StartCoroutine(StartFight());
     }
 
@@ -41,7 +46,9 @@ public class ChooseAnswer : MonoBehaviour {
         followMe = gameObject.GetComponent<Follow>();
        // characterController = gameObject.GetComponent<CharacterController>();
         answerFighter = gameObject.GetComponent<AnswerFighter>();
-        rbody = gameObject.GetComponent<Rigidbody>();
+        //chase = gameObject.GetComponent<Chase>();
+
+
     }
 
     IEnumerator StartFight()
@@ -62,10 +69,16 @@ public class ChooseAnswer : MonoBehaviour {
                     //followMe.enabled = true;
                    // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                     prevObject.SetActive(true);
+                    avatar.SetActive(true);
+                    mcamera.SetActive(false);
+                    controls.SetActive(false);
+                    gcontrols.SetActive(true);
+                    fightcam.SetActive(true);
                     gameObject.GetComponent<CharacterController>();
                     //characterController.enabled = true;
                     answerFighter.enabled = true;
-                    rbody.isKinematic = true;
+                    //chase.enabled = true;
+
                 }
             }
             else
@@ -77,10 +90,15 @@ public class ChooseAnswer : MonoBehaviour {
                 //followMe.enabled = true;
                // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                 prevObject.SetActive(true);
+                avatar.SetActive(true);
+                mcamera.SetActive(false);
+                fightcam.SetActive(true);
+                controls.SetActive(false);
+                gcontrols.SetActive(true);
                 gameObject.GetComponent<CharacterController>();
                 //characterController.enabled = true;
                 answerFighter.enabled = true;
-                rbody.isKinematic = true;
+                //chase.enabled = true;
             }
         }
         if (Input.GetKeyDown(KeyCode.B))
@@ -97,10 +115,15 @@ public class ChooseAnswer : MonoBehaviour {
                     //followMe.enabled = true;
                    // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                     prevObject.SetActive(true);
+                    avatar.SetActive(true);
+                    mcamera.SetActive(false);
+                    fightcam.SetActive(true);
+                    controls.SetActive(false);
+                    gcontrols.SetActive(true);
                     gameObject.GetComponent<CharacterController>();
                     //characterController.enabled = true;
                     answerFighter.enabled = true;
-                    rbody.isKinematic = true;
+                    //chase.enabled = true;
                 }
             }
             else
@@ -112,10 +135,15 @@ public class ChooseAnswer : MonoBehaviour {
                 //followMe.enabled = true;
                // StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
                 prevObject.SetActive(true);
+                avatar.SetActive(true);
+                mcamera.SetActive(false);
+                fightcam.SetActive(true);
+                controls.SetActive(false);
+                gcontrols.SetActive(true);
                 gameObject.GetComponent<CharacterController>();
                 //characterController.enabled = true;
                 answerFighter.enabled = true;
-                rbody.isKinematic = true;
+                //chase.enabled = true;
             }
         }
         if (Input.GetKeyDown(KeyCode.C))
@@ -128,10 +156,15 @@ public class ChooseAnswer : MonoBehaviour {
             //followMe.enabled = true;
             //StartCoroutine(moveToX(objectectA.transform, objectectB.transform.position, 3f));
             prevObject.SetActive(true);
+            avatar.SetActive(true);
+            mcamera.SetActive(false);
+            fightcam.SetActive(true);
+            controls.SetActive(false);
+            gcontrols.SetActive(true);
             gameObject.GetComponent<CharacterController>();
             //characterController.enabled = true;
             answerFighter.enabled = true;
-            rbody.isKinematic = true;
+            //chase.enabled = true;
         }
 
         }

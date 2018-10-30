@@ -13,11 +13,14 @@ public class HitTracker : MonoBehaviour {
     {
         if (other.gameObject.tag != opponent) return;
 
-        healthbar.value -= 20;
+        healthbar.value -= 10;
 
         if(healthbar.value <=0)
         {
-            animator.SetBool("Knockdown", true);
+            animator.SetBool("IsDead", true);
+
+            animator.SetBool("Win", true);
+          
         }
     }
 

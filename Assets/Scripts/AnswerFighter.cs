@@ -40,19 +40,19 @@ public class AnswerFighter : MonoBehaviour {
         ;
     }
 
-    void isDead()
+    /*void isDead()
     {
         if (Input.GetButton("Knockdown"))
             animator.SetBool("Knockdown", true);
         ;
-    }
+    }*/
 
     void Update()
     {
         if (healthbar.value <= 0) return;
         Vector3 direction = player.position - this.transform.position;
         float angle = Vector3.Angle(direction, this.transform.forward);
-        if(Vector3.Distance(player.position, this.transform.position) < 20 && angle < 30)
+        if(Vector3.Distance(player.position, this.transform.position) < 20 && angle < 50)
         {
             direction.y = 0;
 
@@ -62,7 +62,7 @@ public class AnswerFighter : MonoBehaviour {
             animator.SetBool("Idle", false);
             if (direction.magnitude > 5)
             {
-                this.transform.Translate(0, 0, 0.5f);
+                this.transform.Translate(0, 0, 0.2f);
                 animator.SetBool("Walk", true);
                 animator.SetBool("Hook", false);
 
@@ -70,7 +70,7 @@ public class AnswerFighter : MonoBehaviour {
             else
                 //IsFighting();
             {
-                animator.SetBool("Hook", false);
+                animator.SetBool("Hook", true);
                 animator.SetBool("Walk", false);
             }
                
