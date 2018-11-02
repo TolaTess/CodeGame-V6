@@ -7,8 +7,7 @@ public class AnswerFighter : MonoBehaviour {
 
     public Transform player;
     static Animator animator;
-    //private AnimatorStateInfo currentState;
-    //private AnimatorStateInfo previousState;
+    string[] ClipNames = { "Headb", "Hikick", "MForward", "Lkick", "MBack", "Hook"};
 
     public Slider healthbar;
 
@@ -17,8 +16,7 @@ public class AnswerFighter : MonoBehaviour {
     {
 
         animator = GetComponent<Animator>();
-        //currentState = animator.GetCurrentAnimatorStateInfo(0);
-        //previousState = currentState;
+     
     }
 
 
@@ -64,13 +62,14 @@ public class AnswerFighter : MonoBehaviour {
             {
                 this.transform.Translate(0, 0, 0.2f);
                 animator.SetBool("Walk", true);
-                animator.SetBool("Hook", false);
-
+                foreach (string clip in ClipNames)
+                {
+                    animator.SetBool(clip, true);
+                }
             }
             else
-                //IsFighting();
             {
-                animator.SetBool("Hook", true);
+                animator.SetBool("Idle", true);
                 animator.SetBool("Walk", false);
             }
                
@@ -79,7 +78,7 @@ public class AnswerFighter : MonoBehaviour {
         {
             animator.SetBool("Idle", true);
             animator.SetBool("Walk", false);
-            animator.SetBool("Hook", false);
+
         }
 
     }

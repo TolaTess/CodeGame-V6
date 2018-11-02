@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class FighterChanger : MonoBehaviour {
 
-    static Animator animator;
+    public Animator animator;
     public float speed = 10.0f;
     public float rotateSpeed = 100.0f;
+    string[] ClipNames = { "Hook", "Hikick", "MBack", "Lkick", "MForward"};
+
+    int currClip;
+
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+
+
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -26,11 +32,14 @@ public class FighterChanger : MonoBehaviour {
 
         if(Input.GetButton("Fire1"))
         {
-            animator.SetBool("Hook", true);
+            foreach (string clip in ClipNames)
+            {
+                animator.SetBool(clip, true);
+            }
         }
         else 
         {
-            animator.SetBool("Hook", false);
+            animator.SetBool("Idle", true);
         }
 
         if(move != 0)
@@ -46,8 +55,8 @@ public class FighterChanger : MonoBehaviour {
             animator.SetBool("Idle", true);
         }
 
-        if (Input.GetKeyDown("escape"))
-            Cursor.lockState = CursorLockMode.None;
+        //if (Input.GetKeyDown("escape"))
+           // Cursor.lockState = CursorLockMode.None;
 
     }
 

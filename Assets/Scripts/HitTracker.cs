@@ -19,8 +19,6 @@ public class HitTracker : MonoBehaviour {
         {
             animator.SetBool("IsDead", true);
 
-            animator.SetBool("Win", true);
-          
         }
     }
 
