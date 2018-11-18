@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChooseAnswer : MonoBehaviour {
 
     //CharacterController characterController;
-    AnswerFighter answerFighter;
+    AIFighter answerFighter;
     public GameObject fightcam;
     public GameObject avatar;
     public GameObject mcamera;
@@ -46,7 +46,7 @@ public class ChooseAnswer : MonoBehaviour {
     {
         followMe = gameObject.GetComponent<Follow>();
        // characterController = gameObject.GetComponent<CharacterController>();
-        answerFighter = gameObject.GetComponent<AnswerFighter>();
+        answerFighter = gameObject.GetComponent<AIFighter>();
         //chase = gameObject.GetComponent<Chase>();
 
 

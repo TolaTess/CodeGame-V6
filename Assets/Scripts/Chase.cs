@@ -5,6 +5,9 @@ using UnityEngine;
 public class Chase : MonoBehaviour {
 
     public Transform player;
+    private float t = 0.1f;
+    private float z = 0.05f;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,11 +23,11 @@ public class Chase : MonoBehaviour {
             direction.y = 0;
 
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
-                                                       Quaternion.LookRotation(direction), 0.1f);
+                                                       Quaternion.LookRotation(direction), t);
 
             if(direction.magnitude > 5)
             {
-                this.transform.Translate(0, 0, 0.05f);
+                this.transform.Translate(0, 0, z);
             }
         }
 	}
