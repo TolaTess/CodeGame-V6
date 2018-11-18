@@ -23,7 +23,7 @@ public class JavaTarget1 : MonoBehaviour
     /// socre is increased by 20
     /// next object is instantiated to position near prev object
     /// </summary>
-    /// <param name="amount">Amount.</param>
+  
     public void DamageToTarget(float amount)
     {
 

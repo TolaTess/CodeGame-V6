@@ -13,35 +13,50 @@ public class HitTracker : MonoBehaviour {
     ChooseAnswer chooseAnswer;
     public GameObject controls;
     public GameObject gcontrols;
+    public static int score;
     public float wtime = 20f;
+    public GameObject pickupEffect;
 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != opponent) return;
 
-        healthbar.value -= 10;
+        healthbar.value -= 1;
 
-        if(healthbar.value <=0)
+        if (healthbar.value >= 1 || healthbar.value <= 99)
         {
-            if(healthbar.gameObject.name == "Slider Enemy1")
+            if (healthbar.gameObject.name == "Slider Enemy1")
             {
-                animator.SetBool("IsDead", true);
-                JavaTarget1.score += 20;
-                StartCoroutine("WaitForSec");
-                controls.SetActive(true);
-                gcontrols.SetActive(false);
+                TotalScoreManager.score += 20;
 
             }
-            if(healthbar.gameObject.name == "Slider player1")
+            if (healthbar.gameObject.name == "Slider player1")
             {
-                JavaTarget1.score -= 10;
-                controls.SetActive(true);
-                gcontrols.SetActive(false);
+                TotalScoreManager.score -= 10;
             }
-                
         }
+       
+            if (healthbar.value <= 0)
+            {
+                if (healthbar.gameObject.name == "Slider Enemy1")
+                {
 
+                    animator.SetBool("IsDead", true);
+                    StartCoroutine("WaitForSec");
+                    controls.SetActive(true);
+                    gcontrols.SetActive(false);
+
+                }
+                if (healthbar.gameObject.name == "Slider player1")
+                {
+                    TotalScoreManager.score -= 5;
+
+                }
+
+
+
+        }
     }
 
     // Use this for initialization
@@ -58,6 +73,8 @@ public class HitTracker : MonoBehaviour {
     {
         yield return new WaitForSeconds(wtime);
         Destroy(aI);
+        //Instantiate(pickupEffect, aI.transform.position, aI.transform.rotation);
+
         yield return new WaitForSeconds(5f);
 
       

@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TotalScoreManager : MonoBehaviour {
-    
+
+    public static int score;
 
     Text text;
 	// Use this for initialization
@@ -15,10 +16,10 @@ public class TotalScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        int newScore = JavaTarget1.score;
 
+        //total sore
  
-        text.text = "Score: " + newScore;
+        text.text = "Score: " + score;
       
 	}
 }

@@ -35,7 +35,7 @@ public class WeaponController : MonoBehaviour
             Vector3 shootPoint = newfpsCam.GetPoint(rayLength);
             transform.LookAt(shootPoint);
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.T))
         {
             Shoot();
            
@@ -56,10 +56,16 @@ public class WeaponController : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
             JavaTarget1 target = hit.transform.GetComponent<JavaTarget1>();
+            MarkovChain target2 = hit.transform.GetComponent<MarkovChain>();
 
-            if (target!= null)
+            if (target!= null )
             {
                 target.DamageToTarget(damage);
+            }
+
+            if (target2 != null)
+            {
+                target2.DamageToTarget2(damage);
             }
 
         }

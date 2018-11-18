@@ -17,9 +17,9 @@ public class JavaObjects : MonoBehaviour {
     public static string F3 = "\nMain method";
     public static string B3 = "\nFunction method";
 
-    public static string IM1 = "\nModify: public\nDataType: Integer\nName: sumInteger\nParameters: 2";
-    public static string IF1 = "\nModify: private\nDataType: int\nName: a";
-    public static string IF2 = "\nModify: private\nDataType: int\nName: b";
+    public static string IM1 = "// at beginning";
+    public static string IF1 = "// at end";
+    public static string IF2 = "** at beginning";
     public static string IB1 = "\nif(a == b){return(a + b)*2;}\n return a + b;";
     public static string IM2 = "\nModify: public\nDataType: Integer\nName: reverse\nParameters: 3";
     public static string IF3 = "\nModify: private\nDataType: int\nName: a";

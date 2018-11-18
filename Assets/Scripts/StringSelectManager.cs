@@ -37,7 +37,16 @@ public class StringSelectManager : MonoBehaviour {
 
                 switch (hitObject.name)
                 {
-                    case "Method1":
+                        case "AI":
+                            dtext.text = JavaObjects.IM1;
+                            break;
+                        case "IncorrectAI":
+                            dtext.text = JavaObjects.IF2;
+                            break;
+                        case "IncorrectAI2":
+                            dtext.text = JavaObjects.IF1;
+                            break;
+                        case "Method1":
                             dtext.text = JavaObjects.F3;
                         break;
                     case "Field1":

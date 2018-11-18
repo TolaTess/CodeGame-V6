@@ -17,6 +17,10 @@ public class EscapeUI : MonoBehaviour {
             {
                 Hide();
             }
+            else
+            {
+                Show();
+            }
         }
     }
 
@@ -24,5 +28,11 @@ public class EscapeUI : MonoBehaviour {
     {
         canvas.SetActive(false);
         isInView = false;
+    }
+
+    public void Show()
+    {
+        canvas.SetActive(true);
+        isInView = true;
     }
 }
