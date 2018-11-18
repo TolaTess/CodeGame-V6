@@ -15,11 +15,13 @@ public class CameraController : MonoBehaviour {
     public Vector3 offsetPosition;
     public float moveSpeed = 5f;
     public float turnSpeed = 10f;
-    public float smoothSpeed = 0.5f; //how fast camera move on 45degree angle
+    public float smoothSpeed = 4.0f; //how fast camera move on 45degree angle
+
 
     Quaternion targetRotation;
     Vector3 targetPosition;
     bool smoothRotating = false;
+
 
     /// <summary>
     /// Update this instance.
@@ -28,31 +30,24 @@ public class CameraController : MonoBehaviour {
     {
         MoveWithTarget();
         LookAtTarget();
-
-        //left side
-        if(!smoothRotating){
-            if (Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.K))
-            {
-
-                StartCoroutine("RotateAroundTarget", 45);
-            }
-        }
-        //right side
         if (!smoothRotating)
         {
-            if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.O))
+            int angleRotate = 0;
+            do
             {
-                StartCoroutine("RotateAroundTarget", -45);
+                StartCoroutine("RotateAroundTarget", 45);
+                angleRotate++;
             }
+            while (angleRotate > 3);
         }
-    }
 
+    }
 
     /// <summary>
     /// move camera to player's position + current camera offset
     /// offset is modified by RotateAroundTarget coroutine
     /// </summary>
-    void MoveWithTarget()
+    public void MoveWithTarget()
     {
         targetPosition = target.position + offsetPosition;
         transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);

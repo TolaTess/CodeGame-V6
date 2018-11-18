@@ -14,7 +14,8 @@ public class ChooseAnswer : MonoBehaviour {
     //Chase chase;
     public Transform[] targets;
     private Follow followMe;
-    public static int score = DatabaseManager.score;
+    //public static int score = DatabaseManager.score;
+    public static int score1 = JavaTarget1.score;
     public float speed;
     private int current;
     public float wtime;
@@ -55,7 +56,8 @@ public class ChooseAnswer : MonoBehaviour {
     {
         //waits for seconds to give time for the change
         yield return new WaitForSeconds(wtime);
-        if (Input.GetKeyDown(KeyCode.A))
+
+        /*if (Input.GetKeyDown(KeyCode.A))
         {
             if (incorrect1.CompareTag("NotAnswer"))
             {
@@ -145,12 +147,12 @@ public class ChooseAnswer : MonoBehaviour {
                 answerFighter.enabled = true;
                 //chase.enabled = true;
             }
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.C))
         {
-         
-            DatabaseManager.score = score + 20;
-            validMessage.SetActive(true);
+            //DatabaseManager.score = score + 20;
+            JavaTarget1.score = score1 + 20;
+            //validMessage.SetActive(true);
             Destroy(incorrect1);
             Destroy(incorrect2);
             //followMe.enabled = true;
@@ -166,7 +168,12 @@ public class ChooseAnswer : MonoBehaviour {
             answerFighter.enabled = true;
             //chase.enabled = true;
         }
-
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.B))
+            {
+                //DatabaseManager.score = score - 10;
+                JavaTarget1.score = score1 - 10;
+                invalidMessage.SetActive(true);
+            }
         }
 
     IEnumerator moveToX(Transform fromPosition, Vector3 toPosition, float duration)

@@ -13,7 +13,7 @@ public class JavaTarget1 : MonoBehaviour
     /// </summary>
     public float health = 20f;
     public GameObject pickupEffect;
-    public static int score = DatabaseManager.score;
+    public static int score = 0;
     public static int stringTotal = 9;
     private BoxCollider Target;
 
@@ -36,7 +36,8 @@ public class JavaTarget1 : MonoBehaviour
             //Target.enabled = true;
 
         }
-        DatabaseManager.score = score;
+        //DatabaseManager.score = score;
+      
 
     }
     /// <summary>

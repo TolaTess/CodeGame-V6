@@ -34,6 +34,7 @@ public class FighterChanger : MonoBehaviour {
         {
             foreach (string clip in ClipNames)
             {
+                
                 animator.SetBool(clip, true);
             }
         }
@@ -56,7 +57,10 @@ public class FighterChanger : MonoBehaviour {
         }
 
         //if (Input.GetKeyDown("escape"))
-           // Cursor.lockState = CursorLockMode.None;
+        // Cursor.lockState = CursorLockMode.None;
+
+
+
 
     }
 

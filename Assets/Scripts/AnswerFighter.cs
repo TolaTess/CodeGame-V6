@@ -19,32 +19,6 @@ public class AnswerFighter : MonoBehaviour {
      
     }
 
-
-    void IsFighting()
-    {
-
-        if (Input.GetButton("Hook"))
-            animator.SetBool("Headb", true);
-        if (Input.GetButton("Hikick"))
-            animator.SetBool("Hikick", true);
-        if (Input.GetButton("Headb"))
-            animator.SetBool("Hook", true);
-        if (Input.GetButton("MBack"))
-            animator.SetBool("MForward", true);
-        if (Input.GetButton("Lkick"))
-            animator.SetBool("Lkick", true);
-        if (Input.GetButton("MForward"))
-            animator.SetBool("MBack", true);
-        ;
-    }
-
-    /*void isDead()
-    {
-        if (Input.GetButton("Knockdown"))
-            animator.SetBool("Knockdown", true);
-        ;
-    }*/
-
     void Update()
     {
         if (healthbar.value <= 0) return;
