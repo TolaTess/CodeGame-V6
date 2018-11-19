@@ -32,7 +32,7 @@ public class JavaTarget1 : MonoBehaviour
         if (health <= 0f)
         {
             Die();
-            score += 20;
+            TotalScoreManager.score += 20;
             //Target.enabled = true;
 
         }

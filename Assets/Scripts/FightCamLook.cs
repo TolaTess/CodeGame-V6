@@ -24,8 +24,9 @@ public class FightCamLook : MonoBehaviour {
         smoothV.x = Mathf.Lerp(smoothV.x, mouseD.x, 1f / smoothing);
         smoothV.x = Mathf.Lerp(smoothV.y, mouseD.y, 1f / smoothing);
         mouseLook += smoothV;
-
+        //transform information from the camera's right angle
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        //transform using camaera's x value to rotate around the up axis of the character 
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
 	}
 }

@@ -14,7 +14,7 @@ public class HitTracker : MonoBehaviour {
     public GameObject controls;
     public GameObject gcontrols;
     public static int score;
-    public float wtime = 20f;
+    private float wtime = 5f;
     public GameObject pickupEffect;
 
 
@@ -75,7 +75,7 @@ public class HitTracker : MonoBehaviour {
         Destroy(aI);
         //Instantiate(pickupEffect, aI.transform.position, aI.transform.rotation);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(wtime);
 
       
     }
