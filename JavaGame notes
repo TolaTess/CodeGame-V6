@@ -5,7 +5,7 @@ Welcome to Basic Concept, Here you will learn about Comments, Variables, Primiti
 Lets Start with Comments. Single-line comments starts with two-forward slashes. (//). Java also supports Multi-line comments using a forward slash and asterisk as in this example (/* comments */)... press Space
 Press 2 or 3 or 1 to swap your Fighter! Fight your way to the answers! Good luck... press ESC to Start
 Q1
-How do you create Single-line comments in Java? Type A, B or C to select your Fight!
+How do you create Single-line comments in Java? Use mouse to select your Answer!
 Ans
 ** at beginning
 // at end
@@ -25,7 +25,7 @@ Variables
 Variables are used in Java to store data for processing. Variables must be associated with a type. For example int: Integer (whole numbers) and String: Text ("Hello") - double quotes are important with Strings. Another important type is Boolean (checks if something is true or false)...press Space
 
 Q1
-Which variable type is appropriate for your name?
+Which variable type is appropriate for your name? Activate bouce on the correct ball to get the point.
 Ans
 int
 double
