@@ -4,7 +4,7 @@ Shooting game that helps users learn the Java programming language.
 Developed in C#
 
 Tools used:
-Unity game engine 
+Unity game engine, 
 Make human - for characters. 
 Blender for models. 
 
